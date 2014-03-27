@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		233985C718E1ECB9004932EC /* customCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 233985C618E1ECB8004932EC /* customCell.m */; };
+		2352309218E42E1D00EAFE86 /* detailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2352309118E42E1D00EAFE86 /* detailViewController.m */; };
+		2352309418E478F100EAFE86 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2352309318E478F100EAFE86 /* QuartzCore.framework */; };
 		2386D2E618E1AB3200281331 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2386D2E518E1AB3200281331 /* Foundation.framework */; };
 		2386D2E818E1AB3200281331 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2386D2E718E1AB3200281331 /* CoreGraphics.framework */; };
 		2386D2EA18E1AB3300281331 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2386D2E918E1AB3200281331 /* UIKit.framework */; };
@@ -22,7 +24,6 @@
 		2386D30718E1AB3300281331 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2386D2E918E1AB3200281331 /* UIKit.framework */; };
 		2386D30F18E1AB3300281331 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2386D30D18E1AB3300281331 /* InfoPlist.strings */; };
 		2386D31118E1AB3300281331 /* tipTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2386D31018E1AB3300281331 /* tipTests.m */; };
-		2DA3668E18E3932800BC9101 /* Aro copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DA3668D18E3932800BC9101 /* Aro copy.png */; };
 		67F0E7C03A6641F1961FB8FB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4073BE38223945E9BC9A2365 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,9 @@
 /* Begin PBXFileReference section */
 		233985C518E1ECB8004932EC /* customCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = customCell.h; sourceTree = "<group>"; };
 		233985C618E1ECB8004932EC /* customCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = customCell.m; sourceTree = "<group>"; };
+		2352309018E42E1D00EAFE86 /* detailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = detailViewController.h; sourceTree = "<group>"; };
+		2352309118E42E1D00EAFE86 /* detailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = detailViewController.m; sourceTree = "<group>"; };
+		2352309318E478F100EAFE86 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		2386D2E218E1AB3200281331 /* tip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2386D2E518E1AB3200281331 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2386D2E718E1AB3200281331 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -58,7 +62,6 @@
 		2386D30C18E1AB3300281331 /* tipTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "tipTests-Info.plist"; sourceTree = "<group>"; };
 		2386D30E18E1AB3300281331 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2386D31018E1AB3300281331 /* tipTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = tipTests.m; sourceTree = "<group>"; };
-		2DA3668D18E3932800BC9101 /* Aro copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Aro copy.png"; sourceTree = "<group>"; };
 		4073BE38223945E9BC9A2365 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA15D94CB1664AA88BDA51D2 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -68,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2352309418E478F100EAFE86 /* QuartzCore.framework in Frameworks */,
 				2386D2E818E1AB3200281331 /* CoreGraphics.framework in Frameworks */,
 				2386D2EA18E1AB3300281331 /* UIKit.framework in Frameworks */,
 				2386D2E618E1AB3200281331 /* Foundation.framework in Frameworks */,
@@ -111,6 +115,7 @@
 		2386D2E418E1AB3200281331 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2352309318E478F100EAFE86 /* QuartzCore.framework */,
 				2386D2E518E1AB3200281331 /* Foundation.framework */,
 				2386D2E718E1AB3200281331 /* CoreGraphics.framework */,
 				2386D2E918E1AB3200281331 /* UIKit.framework */,
@@ -123,10 +128,11 @@
 		2386D2EB18E1AB3300281331 /* tip */ = {
 			isa = PBXGroup;
 			children = (
-				2DA3668D18E3932800BC9101 /* Aro copy.png */,
 				2386D2F418E1AB3300281331 /* TIPAppDelegate.h */,
 				2386D2F518E1AB3300281331 /* TIPAppDelegate.m */,
 				2386D2F718E1AB3300281331 /* Main.storyboard */,
+				2352309018E42E1D00EAFE86 /* detailViewController.h */,
+				2352309118E42E1D00EAFE86 /* detailViewController.m */,
 				2386D2FA18E1AB3300281331 /* TIPViewController.h */,
 				2386D2FB18E1AB3300281331 /* TIPViewController.m */,
 				233985C518E1ECB8004932EC /* customCell.h */,
@@ -245,7 +251,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DA3668E18E3932800BC9101 /* Aro copy.png in Resources */,
 				2386D2FE18E1AB3300281331 /* Images.xcassets in Resources */,
 				2386D2F018E1AB3300281331 /* InfoPlist.strings in Resources */,
 				2386D2F918E1AB3300281331 /* Main.storyboard in Resources */,
@@ -303,6 +308,7 @@
 				233985C718E1ECB9004932EC /* customCell.m in Sources */,
 				2386D2FC18E1AB3300281331 /* TIPViewController.m in Sources */,
 				2386D2F618E1AB3300281331 /* TIPAppDelegate.m in Sources */,
+				2352309218E42E1D00EAFE86 /* detailViewController.m in Sources */,
 				2386D2F218E1AB3300281331 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

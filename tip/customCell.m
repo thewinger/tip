@@ -45,12 +45,12 @@
         myContentView.layer.borderColor = [UIColor colorWithRed:212.0f/255.0f green:212.0f/255.0f blue:212.0f/255.0f alpha:1.0f].CGColor;
         myContentView.layer.borderWidth = borderWidth;
     
-        CGFloat borderWithBg = 1.0f;
         UIView *bgView = [[UIView alloc] initWithFrame:self.frame];
-        bgView.backgroundColor = [UIColor clearColor];
-        bgView.layer.borderColor = [UIColor redColor].CGColor;
-        bgView.layer.borderWidth = borderWithBg;
-       // self.selectedBackgroundView = bgView; //Para los cell seleccionados
+        bgView.backgroundColor = [UIColor colorWithRed:76.0f/255.0f green:217.0f/255.0f blue:100.0f/255.0f alpha:1.0f];
+        
+        self.selectedBackgroundView = bgView; //Para los cell seleccionados
+        
+        self.backgroundColor = [UIColor whiteColor];
         
         [self.contentView addSubview:imageView];
         [self.contentView addSubview:cellName];

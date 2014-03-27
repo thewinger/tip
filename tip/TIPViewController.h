@@ -10,4 +10,6 @@
 
 @interface TIPViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource>
 
+- (IBAction)selectMultiple:(id)sender;
+
 @end
