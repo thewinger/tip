@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-IQKeyboardManager.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-UIFloatLabelTextField.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,17 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>262F13DA8C0C4F37A3763A24</key>
+		<key>02F13F3022674BEF9153DB2C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A263CC81D8FE411FB1F9D6ED</key>
+		<key>1BE361A4A7F44A19919FC78E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C002413550C64BEFB660A5C5</key>
+		<key>8472F6AE847542458DFEF3BA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>927298DC8B654CDEB162380C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

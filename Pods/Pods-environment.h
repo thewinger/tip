@@ -48,6 +48,12 @@
 #define COCOAPODS_VERSION_MINOR_AFNetworking_UIKit 2
 #define COCOAPODS_VERSION_PATCH_AFNetworking_UIKit 1
 
+// IQKeyboardManager
+#define COCOAPODS_POD_AVAILABLE_IQKeyboardManager
+#define COCOAPODS_VERSION_MAJOR_IQKeyboardManager 3
+#define COCOAPODS_VERSION_MINOR_IQKeyboardManager 0
+#define COCOAPODS_VERSION_PATCH_IQKeyboardManager 3
+
 // UIFloatLabelTextField
 #define COCOAPODS_POD_AVAILABLE_UIFloatLabelTextField
 #define COCOAPODS_VERSION_MAJOR_UIFloatLabelTextField 1

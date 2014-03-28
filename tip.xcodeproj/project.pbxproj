@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		230B73B018E5E03F00567956 /* multipleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 230B73AF18E5E03F00567956 /* multipleViewController.m */; };
+		230B73B318E5F70B00567956 /* loginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 230B73B218E5F70B00567956 /* loginViewController.m */; };
+		230B73B718E5F94B00567956 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 230B73B618E5F94B00567956 /* Main.storyboard */; };
 		233985C718E1ECB9004932EC /* customCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 233985C618E1ECB8004932EC /* customCell.m */; };
 		2352309218E42E1D00EAFE86 /* detailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2352309118E42E1D00EAFE86 /* detailViewController.m */; };
 		2352309418E478F100EAFE86 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2352309318E478F100EAFE86 /* QuartzCore.framework */; };
@@ -16,7 +19,6 @@
 		2386D2F018E1AB3300281331 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2386D2EE18E1AB3300281331 /* InfoPlist.strings */; };
 		2386D2F218E1AB3300281331 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2386D2F118E1AB3300281331 /* main.m */; };
 		2386D2F618E1AB3300281331 /* TIPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2386D2F518E1AB3300281331 /* TIPAppDelegate.m */; };
-		2386D2F918E1AB3300281331 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2386D2F718E1AB3300281331 /* Main.storyboard */; };
 		2386D2FC18E1AB3300281331 /* TIPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2386D2FB18E1AB3300281331 /* TIPViewController.m */; };
 		2386D2FE18E1AB3300281331 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2386D2FD18E1AB3300281331 /* Images.xcassets */; };
 		2386D30518E1AB3300281331 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2386D30418E1AB3300281331 /* XCTest.framework */; };
@@ -38,6 +40,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		230B73AE18E5E03F00567956 /* multipleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = multipleViewController.h; sourceTree = "<group>"; };
+		230B73AF18E5E03F00567956 /* multipleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = multipleViewController.m; sourceTree = "<group>"; };
+		230B73B118E5F70B00567956 /* loginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loginViewController.h; sourceTree = "<group>"; };
+		230B73B218E5F70B00567956 /* loginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = loginViewController.m; sourceTree = "<group>"; };
+		230B73B618E5F94B00567956 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		233985C518E1ECB8004932EC /* customCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = customCell.h; sourceTree = "<group>"; };
 		233985C618E1ECB8004932EC /* customCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = customCell.m; sourceTree = "<group>"; };
 		2352309018E42E1D00EAFE86 /* detailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = detailViewController.h; sourceTree = "<group>"; };
@@ -53,7 +60,6 @@
 		2386D2F318E1AB3300281331 /* tip-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "tip-Prefix.pch"; sourceTree = "<group>"; };
 		2386D2F418E1AB3300281331 /* TIPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TIPAppDelegate.h; sourceTree = "<group>"; };
 		2386D2F518E1AB3300281331 /* TIPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TIPAppDelegate.m; sourceTree = "<group>"; };
-		2386D2F818E1AB3300281331 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2386D2FA18E1AB3300281331 /* TIPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TIPViewController.h; sourceTree = "<group>"; };
 		2386D2FB18E1AB3300281331 /* TIPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TIPViewController.m; sourceTree = "<group>"; };
 		2386D2FD18E1AB3300281331 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -128,9 +134,13 @@
 		2386D2EB18E1AB3300281331 /* tip */ = {
 			isa = PBXGroup;
 			children = (
+				230B73B618E5F94B00567956 /* Main.storyboard */,
 				2386D2F418E1AB3300281331 /* TIPAppDelegate.h */,
 				2386D2F518E1AB3300281331 /* TIPAppDelegate.m */,
-				2386D2F718E1AB3300281331 /* Main.storyboard */,
+				230B73B118E5F70B00567956 /* loginViewController.h */,
+				230B73B218E5F70B00567956 /* loginViewController.m */,
+				230B73AE18E5E03F00567956 /* multipleViewController.h */,
+				230B73AF18E5E03F00567956 /* multipleViewController.m */,
 				2352309018E42E1D00EAFE86 /* detailViewController.h */,
 				2352309118E42E1D00EAFE86 /* detailViewController.m */,
 				2386D2FA18E1AB3300281331 /* TIPViewController.h */,
@@ -251,9 +261,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				230B73B718E5F94B00567956 /* Main.storyboard in Resources */,
 				2386D2FE18E1AB3300281331 /* Images.xcassets in Resources */,
 				2386D2F018E1AB3300281331 /* InfoPlist.strings in Resources */,
-				2386D2F918E1AB3300281331 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,7 +318,9 @@
 				233985C718E1ECB9004932EC /* customCell.m in Sources */,
 				2386D2FC18E1AB3300281331 /* TIPViewController.m in Sources */,
 				2386D2F618E1AB3300281331 /* TIPAppDelegate.m in Sources */,
+				230B73B318E5F70B00567956 /* loginViewController.m in Sources */,
 				2352309218E42E1D00EAFE86 /* detailViewController.m in Sources */,
+				230B73B018E5E03F00567956 /* multipleViewController.m in Sources */,
 				2386D2F218E1AB3300281331 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,14 +350,6 @@
 				2386D2EF18E1AB3300281331 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		2386D2F718E1AB3300281331 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2386D2F818E1AB3300281331 /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		2386D30D18E1AB3300281331 /* InfoPlist.strings */ = {

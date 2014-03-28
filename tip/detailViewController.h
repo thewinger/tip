@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface detailViewController : UIViewController
+@interface detailViewController : UIViewController <UITextFieldDelegate, UIAlertViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UILabel *nameDetail;
 @property (strong, nonatomic) IBOutlet UIImageView *imageDetail;

@@ -8,6 +8,7 @@
 
 #import "TIPViewController.h"
 #import "detailViewController.h"
+#import "multipleViewController.h"
 #import "customCell.h"
 
 static NSString * const BaseURLString = @"http://experiences-events.com/tip/consulta.php";
@@ -38,7 +39,8 @@ static NSString * const BaseURLString = @"http://experiences-events.com/tip/cons
     [super viewDidLoad];
 
     self.selectedEmployees = [NSMutableArray array];
-   // UIBarButtonItem *splitButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(selectMultiple:)];
+
+    //NAV BAR
     self.splitButton = [[UIBarButtonItem alloc] initWithTitle:@"Split" style:UIBarButtonItemStylePlain
                                                                    target:self action:@selector(selectMultiple:)];
 
@@ -106,8 +108,9 @@ static NSString * const BaseURLString = @"http://experiences-events.com/tip/cons
     
     [operation start];
 
+}
 
-    
+-(void)viewDidLayoutSubviews {
 }
 
 #pragma mark - UICollectionView DataSource
@@ -144,6 +147,7 @@ static NSString * const BaseURLString = @"http://experiences-events.com/tip/cons
         NSString *selectedEmployee = [self.employeesArray objectAtIndex:indexPath.item];
         //Add selected item into array
         [self.selectedEmployees addObject:selectedEmployee];
+        
     } else {
     [self performSegueWithIdentifier:@"toDetailView" sender:self];
     }
@@ -152,6 +156,11 @@ static NSString * const BaseURLString = @"http://experiences-events.com/tip/cons
 -(void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
     
     if (self.multipleEnable) {
+        customCell *cell = (customCell *)[collectionView cellForItemAtIndexPath:indexPath];
+        
+        cell.cellName.textColor = [UIColor blackColor];
+        cell.cellPosition.textColor = [UIColor blackColor];
+        cell.cellRestaurant.textColor = [UIColor blackColor];
         NSString *deselectedEmployee = [self.employeesArray objectAtIndex:indexPath.item];
         [self.selectedEmployees removeObject:deselectedEmployee];
     }
@@ -188,7 +197,11 @@ static NSString * const BaseURLString = @"http://experiences-events.com/tip/cons
         destViewController.imageURL = [[self.employeesArray objectAtIndex:self.selectedCellIndex] objectForKey:@"pic_url"];
         [self.collectionView deselectItemAtIndexPath:indexPath animated:NO];
     }
-    
+    if ([segue.identifier isEqualToString:@"toMultipleView"]) {
+        multipleViewController *destViewController = segue.destinationViewController;
+        destViewController.selectedEmployees = self.selectedEmployees;
+        NSLog(@"employees: %i", [self.selectedEmployees count]);
+    }
 }
 /*
 -(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
@@ -208,7 +221,8 @@ static NSString * const BaseURLString = @"http://experiences-events.com/tip/cons
         NSLog(@"Disable");
         
         if ([self.selectedEmployees count] > 0) {
-            //hacer algo
+            
+            [self performSegueWithIdentifier:@"toMultipleView" sender:self];
         }
         //deselect
         for (NSIndexPath *indexPath in self.collectionView.indexPathsForSelectedItems) {
@@ -231,6 +245,7 @@ static NSString * const BaseURLString = @"http://experiences-events.com/tip/cons
         self.collectionView.allowsMultipleSelection = YES;
         [self.splitButton setTitle:@"TIP"];
         NSLog(@"Enable");
+        
     }
 }
 @end
