@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-UIFloatLabelTextField.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>5C82C56D7BAC47B6927DBCC7</key>
+		<key>262F13DA8C0C4F37A3763A24</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FD64BE52064044D381CAFF8A</key>
+		<key>A263CC81D8FE411FB1F9D6ED</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C002413550C64BEFB660A5C5</key>
 		<dict>
 			<key>primary</key>
 			<true/>

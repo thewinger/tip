@@ -14,12 +14,12 @@
 @property (strong, nonatomic) IBOutlet UIImageView *imageDetail;
 @property (strong, nonatomic) IBOutlet UILabel *positionDetail;
 @property (strong, nonatomic) IBOutlet UILabel *restaurantDetail;
-@property (strong, nonatomic) IBOutlet UITextField *tipTF;
 @property (strong, nonatomic) NSString *imageURL;
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *position;
 @property (strong, nonatomic) NSString *restaurant;
 @property (strong, nonatomic) IBOutlet UIView *cardView;
+@property (strong, nonatomic) UIFloatLabelTextField *tipTF;
 
 - (IBAction)close:(id)sender;
 

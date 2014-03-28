@@ -30,6 +30,23 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [[UIFloatLabelTextField appearance] setBackgroundColor:[UIColor colorWithRed:76.0f/255.0f green:217.0f/255.0f blue:100.0f/255.0f alpha:1.0f]];
+    //[[UIFloatLabelTextField appearance] setBackgroundColor:[UIColor redColor]];
+    tipTF = [UIFloatLabelTextField new];
+    tipTF.frame = CGRectMake(10.0f, 210.0f, 300.0f, 50.0f);
+    tipTF.font = [UIFont systemFontOfSize:20.0f];
+    tipTF.textAlignment = NSTextAlignmentCenter;
+    tipTF.contentVerticalAlignment = UIControlContentVerticalAlignmentBottom;
+    tipTF.keyboardType = UIKeyboardTypeNumberPad;
+    tipTF.textColor = [UIColor whiteColor];
+    tipTF.placeholder = @"How much do you want to TIP?";
+    tipTF.clearButtonMode = UITextFieldViewModeNever;
+    tipTF.floatLabelActiveColor = [UIColor whiteColor];
+    tipTF.floatLabelPassiveColor = [UIColor whiteColor];
+    [self.view addSubview:tipTF];
+    
+    
     [nameDetail setTextAlignment:NSTextAlignmentLeft];
     CGFloat borderWidth = 10.0f;
   

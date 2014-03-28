@@ -136,6 +136,7 @@ static NSString * const BaseURLString = @"http://experiences-events.com/tip/cons
 
     if (self.multipleEnable) {
         customCell *cell = (customCell *)[collectionView cellForItemAtIndexPath:indexPath];
+        
         cell.cellName.textColor = [UIColor whiteColor];
         cell.cellPosition.textColor = [UIColor whiteColor];
         cell.cellRestaurant.textColor = [UIColor whiteColor];
@@ -149,13 +150,10 @@ static NSString * const BaseURLString = @"http://experiences-events.com/tip/cons
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
     if (self.multipleEnable) {
         NSString *deselectedEmployee = [self.employeesArray objectAtIndex:indexPath.item];
         [self.selectedEmployees removeObject:deselectedEmployee];
-        customCell *cell = (customCell *)[collectionView cellForItemAtIndexPath:indexPath];
-        cell.cellName.textColor = [UIColor blackColor];
-        cell.cellPosition.textColor = [UIColor blackColor];
-        cell.cellRestaurant.textColor = [UIColor blackColor];
     }
 }
 
@@ -208,12 +206,20 @@ static NSString * const BaseURLString = @"http://experiences-events.com/tip/cons
     
     if (self.multipleEnable) {
         NSLog(@"Disable");
+        
         if ([self.selectedEmployees count] > 0) {
             //hacer algo
         }
         //deselect
         for (NSIndexPath *indexPath in self.collectionView.indexPathsForSelectedItems) {
-            [self.collectionView deselectItemAtIndexPath:indexPath animated:NO];
+            [self.collectionView deselectItemAtIndexPath:indexPath animated:YES];
+            
+            
+            customCell *cell = (customCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
+            
+            cell.cellName.textColor = [UIColor blackColor];
+            cell.cellPosition.textColor = [UIColor blackColor];
+            cell.cellRestaurant.textColor = [UIColor blackColor];
         }
         [self.selectedEmployees removeAllObjects];
         
