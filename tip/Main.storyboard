@@ -41,7 +41,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ygp-oZ-Xci">
-                                <rect key="frame" x="5" y="70" width="310" height="130"/>
+                                <rect key="frame" x="5" y="40" width="310" height="130"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="11u-fY-8aV">
@@ -92,24 +92,11 @@
                                     <constraint firstAttribute="trailing" secondItem="cJg-5b-JrI" secondAttribute="trailing" constant="5" id="vld-ak-eW9"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h7I-Mj-v0J">
-                                <rect key="frame" x="267" y="30" width="40" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Close">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="close:" destination="i01-99-HEP" eventType="touchUpInside" id="YiS-Tr-8n0"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.29803921570000003" green="0.85098039219999999" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Ygp-oZ-Xci" firstAttribute="top" secondItem="h7I-Mj-v0J" secondAttribute="bottom" constant="10" id="Hlr-Ei-WWe"/>
                             <constraint firstItem="Ygp-oZ-Xci" firstAttribute="centerX" secondItem="jt0-tC-drw" secondAttribute="centerX" id="Hs5-Xp-s8e"/>
-                            <constraint firstItem="Ygp-oZ-Xci" firstAttribute="top" secondItem="jt0-tC-drw" secondAttribute="top" constant="70" id="g5f-4f-4bK"/>
-                            <constraint firstAttribute="trailing" secondItem="h7I-Mj-v0J" secondAttribute="trailing" constant="13" id="uK4-DH-Cn9"/>
+                            <constraint firstItem="Ygp-oZ-Xci" firstAttribute="top" secondItem="jt0-tC-drw" secondAttribute="top" constant="40" id="g5f-4f-4bK"/>
                         </constraints>
                     </view>
                     <size key="freeformSize" width="0.0" height="-1"/>
@@ -136,18 +123,6 @@
                     <view key="view" contentMode="scaleToFill" id="qXH-TY-U1a">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fP8-k2-hha">
-                                <rect key="frame" x="270" y="30" width="40" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Close">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="close:" destination="6Tz-Za-ZCy" eventType="touchUpInside" id="ea0-2d-fFe"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" red="0.29803921570000003" green="0.85098039219999999" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </viewController>

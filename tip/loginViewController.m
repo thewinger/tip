@@ -104,7 +104,7 @@
 -(void)viewDidAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
-    [[IQKeyboardManager sharedManager] setShouldToolbarUsesTextFieldTintColor:YES];
+    [[IQKeyboardManager sharedManager] setShouldToolbarUsesTextFieldTintColor:NO];
     [[IQKeyboardManager sharedManager] setShouldShowTextFieldPlaceholder:NO];
     [[IQKeyboardManager sharedManager] setShouldResignOnTouchOutside:YES];
 }

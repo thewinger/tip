@@ -21,6 +21,8 @@
 @property (strong, nonatomic) IBOutlet UIView *cardView;
 @property (strong, nonatomic) UIFloatLabelTextField *tipTF;
 
+
+
 - (IBAction)close:(id)sender;
 
 @end

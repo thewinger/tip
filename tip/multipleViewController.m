@@ -15,6 +15,7 @@
     UIAlertView *doneAV;
 }
 @property (assign) int numberOfEmployees;
+@property (strong, nonatomic) NSString *texto;
 @end
 
 @implementation multipleViewController
@@ -34,7 +35,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    textLabel = [[UILabel alloc] initWithFrame:CGRectMake(20.0f, 70.0f, 300.0f, 150.0f)];
+    textLabel = [[UILabel alloc] initWithFrame:CGRectMake(20.0f, 40.0f, 300.0f, 150.0f)];
     textLabel.lineBreakMode = NSLineBreakByWordWrapping;
     textLabel.font = [UIFont systemFontOfSize:16.0f];
     textLabel.numberOfLines = 0;
@@ -55,14 +56,13 @@
     
     [[UIFloatLabelTextField appearance] setBackgroundColor:[UIColor colorWithRed:76.0f/255.0f green:217.0f/255.0f blue:100.0f/255.0f alpha:1.0f]];
     tipTF = [UIFloatLabelTextField new];
-    tipTF.frame = CGRectMake(10.0f, 200.0f, 300.0f, 45.0f);
+    tipTF.frame = CGRectMake(10.0f, 170.0f, 300.0f, 45.0f);
     tipTF.font = [UIFont systemFontOfSize:20.0f];
     tipTF.textAlignment = NSTextAlignmentCenter;
-    //tipTF.contentVerticalAlignment = UIControlContentVerticalAlignmentBottom;
     tipTF.keyboardType = UIKeyboardTypeNumberPad;
     tipTF.textColor = [UIColor whiteColor];
     tipTF.tintColor = [UIColor colorWithRed:37.0f/255.0f green:108.0f/255.0f blue:49.0f/255.0f alpha:1.0f];
-    tipTF.placeholder = @"How much do you want to TIP?";
+    tipTF.placeholder = @"Introduce your TIP";
     
     if ([tipTF respondsToSelector:@selector(setAttributedPlaceholder:)]) {
         UIColor *color = [UIColor whiteColor];
@@ -75,6 +75,7 @@
     tipTF.clearButtonMode = UITextFieldViewModeNever;
     tipTF.floatLabelActiveColor = [UIColor whiteColor];
     tipTF.floatLabelPassiveColor = [UIColor whiteColor];
+    tipTF.delegate = self;
     [self.view addSubview:tipTF];
 
     //Add bottom border
@@ -85,7 +86,8 @@
     [tipTF.layer addSublayer:bottomBorder];
     
     tipTF.inputAccessoryView = [[UIView alloc] init];
-    [tipTF addDoneOnKeyboardWithTarget:self action:@selector(tipAction:)];
+    
+    [tipTF addRightLeftOnKeyboardWithTarget:self leftButtonTitle:@"Back" rightButtonTitle:@"TIP" rightButtonAction:@selector(tipAction:) leftButtonAction:@selector(close:)];
     
     [tipTF becomeFirstResponder];
 
@@ -94,15 +96,6 @@
     
 }
 
--(void)viewDidAppear:(BOOL)animated {
-    
-    [self viewWillAppear:YES];
-    [[IQKeyboardManager sharedManager] setShouldShowTextFieldPlaceholder:NO];
-    [[IQKeyboardManager sharedManager] setShouldToolbarUsesTextFieldTintColor:YES];
-    [[IQKeyboardManager sharedManager] setShouldResignOnTouchOutside:NO];
-    
-    
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -121,12 +114,12 @@
 }
 */
 
-- (IBAction)close:(id)sender {
+- (void)close:(id)sender {
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 -(void)tipAction:(id)sender {
-    confirmationAV = [[UIAlertView alloc] initWithTitle:@"TIP Security" message:@"Please enter your PIN code" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Next", nil];
+    confirmationAV = [[UIAlertView alloc] initWithTitle:@"TIP Security" message:@"Please enter your PIN code" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Confirm", nil];
     confirmationAV.tag = 2;
     confirmationAV.alertViewStyle = UIAlertViewStyleSecureTextInput;
     [confirmationAV textFieldAtIndex:0].delegate = self;
@@ -150,6 +143,19 @@
             [self dismissViewControllerAnimated:YES completion:NULL];
         }
     }
+}
+
+
+-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    self.texto = [textField.text stringByReplacingCharactersInRange:range withString:string];
+    NSLog(@"%@", self.texto);
+    
+    if ([self.texto hasPrefix:@"£"]) {
+        return YES;
+    } else {
+        textField.text = [NSString stringWithFormat:@"£%@", self.texto];
+    }
+    return NO;
 }
 
 @end
