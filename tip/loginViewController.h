@@ -10,4 +10,11 @@
 
 @interface loginViewController : UIViewController
 
+
+@property (strong, nonatomic) UIFloatLabelTextField *userTF;
+@property (strong, nonatomic) UIFloatLabelTextField *passTF;
+@property (strong, nonatomic) UIButton *loginButton;
+
+-(void)loginButtonPressed;
+
 @end

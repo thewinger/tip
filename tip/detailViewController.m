@@ -9,6 +9,7 @@
 #import "detailViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "IQKeyboardManager.h"
+#import "UIView+IQKeyboardToolbar.h"
 
 @interface detailViewController () {
     UIAlertView *confirmationAV;
@@ -40,15 +41,36 @@
     tipTF.frame = CGRectMake(10.0f, 200.0f, 300.0f, 45.0f);
     tipTF.font = [UIFont systemFontOfSize:20.0f];
     tipTF.textAlignment = NSTextAlignmentCenter;
-    //tipTF.contentVerticalAlignment = UIControlContentVerticalAlignmentBottom;
     tipTF.keyboardType = UIKeyboardTypeNumberPad;
     tipTF.textColor = [UIColor whiteColor];
-    tipTF.tintColor = [UIColor colorWithRed:76.0f/255.0f green:217.0f/255.0f blue:100.0f/255.0f alpha:1.0f];
+    tipTF.tintColor = [UIColor colorWithRed:37.0f/255.0f green:108.0f/255.0f blue:49.0f/255.0f alpha:1.0f];
     tipTF.placeholder = @"How much do you want to TIP?";
+    
+    if ([tipTF respondsToSelector:@selector(setAttributedPlaceholder:)]) {
+        UIColor *color = [UIColor whiteColor];
+        tipTF.attributedPlaceholder = [[NSAttributedString alloc] initWithString:tipTF.placeholder attributes:@{NSForegroundColorAttributeName: color}];
+    } else {
+        NSLog(@"Cannot set placeholder text's color, because deployment target is earlier than iOS 6.0");
+        // TODO: Add fall-back code to set placeholder color.
+    }
+    
     tipTF.clearButtonMode = UITextFieldViewModeNever;
     tipTF.floatLabelActiveColor = [UIColor whiteColor];
     tipTF.floatLabelPassiveColor = [UIColor whiteColor];
     [self.view addSubview:tipTF];
+    
+    //Add bottom border
+    CALayer *bottomBorder = [CALayer layer];
+    
+    bottomBorder.frame = CGRectMake(0.0f, 43.0f, tipTF.frame.size.width, 1.0f);
+    bottomBorder.backgroundColor = [UIColor whiteColor].CGColor;
+    [tipTF.layer addSublayer:bottomBorder];
+    
+    
+    tipTF.inputAccessoryView = [[UIView alloc] init];
+    [tipTF addDoneOnKeyboardWithTarget:self action:@selector(tipAction:)];
+    
+    
     
     [nameDetail setTextAlignment:NSTextAlignmentLeft];
     CGFloat borderWidth = 10.0f;
@@ -62,7 +84,8 @@
     self.nameDetail.text = self.name;
     self.positionDetail.text = self.position;
     self.restaurantDetail.text = self.restaurant;
-        [tipTF becomeFirstResponder];
+    
+    [tipTF becomeFirstResponder];
     
     
 }
@@ -72,6 +95,7 @@
     [self viewWillAppear:YES];
     [[IQKeyboardManager sharedManager] setShouldShowTextFieldPlaceholder:NO];
     [[IQKeyboardManager sharedManager] setShouldToolbarUsesTextFieldTintColor:YES];
+    [[IQKeyboardManager sharedManager] setShouldResignOnTouchOutside:NO];
 
 
 }
@@ -95,17 +119,17 @@
 */
 
 
-
 - (IBAction)close:(id)sender {
-    
-    confirmationAV = [[UIAlertView alloc] initWithTitle:@"Secure Pin" message:@"Enter your security pin" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Done", nil];
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+-(void)tipAction:(id)sender {
+    confirmationAV = [[UIAlertView alloc] initWithTitle:@"TIP Security" message:@"Please enter your PIN code" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Next", nil];
     confirmationAV.tag = 2;
     confirmationAV.alertViewStyle = UIAlertViewStyleSecureTextInput;
     [confirmationAV textFieldAtIndex:0].delegate = self;
     [confirmationAV textFieldAtIndex:0].keyboardType = UIKeyboardTypeNumberPad;
     [confirmationAV show];
-    
-//    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
@@ -114,7 +138,7 @@
             [confirmationAV dismissWithClickedButtonIndex:0 animated:YES];
         } else {
             [confirmationAV dismissWithClickedButtonIndex:1 animated:YES];
-            doneAV = [[UIAlertView alloc] initWithTitle:@"YUHU!" message:@"Your TIP have been made" delegate:self cancelButtonTitle:@"New" otherButtonTitles:nil];
+            doneAV = [[UIAlertView alloc] initWithTitle:@"YUHU!" message:@"Your TIP has been made" delegate:self cancelButtonTitle:@"Finish" otherButtonTitles:nil];
             [doneAV show];
         }
     } else if (alertView == doneAV) {
