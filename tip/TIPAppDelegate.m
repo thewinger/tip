@@ -14,7 +14,10 @@
 {
     // Override point for customization after application launch.
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:76.0f/255.0f green:217.0f/255.0f blue:100.0f/255.0f alpha:1.0f]];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    
+    
     return YES;
 }
 							
